@@ -72,8 +72,8 @@ const myChart = new Chart(ctx, {
     datasets: [{
       label: "عدد النقرات حسب الأيام (هذا الأسبوع):",
       data: dailyClicks,
-      backgroundColor: "rgba(255, 165, 0, 0.6)", // Orange bars
-      borderColor: "rgba(255, 165, 0, 1)", // Orange border
+      backgroundColor: "rgba(255,69,0)", // Orange bars
+      borderColor: "rgba(255,69,0)", // Orange border
       borderWidth: 1
     }]
   },
