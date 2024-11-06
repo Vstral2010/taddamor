@@ -72,8 +72,8 @@ const myChart = new Chart(ctx, {
     datasets: [{
       label: "عدد النقرات حسب الأيام (هذا الأسبوع):",
       data: dailyClicks,
-      backgroundColor: "rgba(255,69,0)", // Orange bars
-      borderColor: "rgba(255,69,0)", // Orange border
+      backgroundColor: "rgba(0,206,209)", // Orange bars
+      borderColor: "rgba(0,206,209)", // Orange border
       borderWidth: 1
     }]
   },
@@ -99,7 +99,7 @@ const myChart = new Chart(ctx, {
     plugins: {
       legend: {
         labels: {
-          color: 'rgba(255,69,0)', // Legend text in orange
+          color: 'rgba(0,206,209)', // Legend text in orange
         }
       }
     }
