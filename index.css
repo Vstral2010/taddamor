@@ -11,7 +11,7 @@ body {
 }
 
 h1 {
-  color: #333;
+  color: #FF4500;
   font-size: 1.8rem;
 }
 
@@ -34,7 +34,7 @@ button:hover {
 .results {
   margin-top: 20px;
   font-size: 1.2rem;
-  color: #333;
+  color: #FF4500;
 }
 
 .chart-container {
