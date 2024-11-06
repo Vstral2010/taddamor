@@ -3,8 +3,8 @@ const clickCountDisplay = document.getElementById("clickCount");
 const ctx = document.getElementById("myChart").getContext("2d");
 
 let clickCount = 0;
-let dailyClicks = [0, 0, 0, 0, 0, 0, 0]; // Array for storing daily clicks (Sunday to Saturday)
-const dailyLimit = 5; // Set the daily limit
+let dailyClicks = [0, 0, 0, 0, 0, 0, 0]; // Array for storing daily clicks (Thursday to Wednesday)
+const dailyLimit = 9; // New daily limit
 
 // Load the stored data from localStorage
 const loadStoredData = () => {
@@ -48,10 +48,13 @@ const updateChart = () => {
 clickButton.addEventListener("click", () => {
   const today = new Date().getDay();
 
+  // Adjust the `today` value to match Thursday to Wednesday (Thursday is 0)
+  const adjustedToday = (today === 0) ? 6 : today - 1;
+
   // Check if the daily limit has been reached
-  if (dailyClicks[today] < dailyLimit) {
+  if (dailyClicks[adjustedToday] < dailyLimit) {
     clickCount++;
-    dailyClicks[today]++;
+    dailyClicks[adjustedToday]++;
     clickCountDisplay.textContent = clickCount;
     storeData(); // Store updated data
 
@@ -61,26 +64,42 @@ clickButton.addEventListener("click", () => {
   }
 });
 
-// Initialize chart
+// Initialize chart with orange color scheme
 const myChart = new Chart(ctx, {
   type: "bar",
   data: {
-    labels: ["الأحد", "الاثنين", "الثلاثاء", "الأربعاء", "الخميس", "الجمعة", "السبت"],
+    labels: ["الخميس", "الجمعة", "السبت", "الأحد", "الاثنين", "الثلاثاء", "الأربعاء"],
     datasets: [{
       label: "عدد النقرات حسب الأيام (هذا الأسبوع):",
       data: dailyClicks,
-      backgroundColor: "rgba(54, 162, 235, 0.6)",
-      borderColor: "rgba(54, 162, 235, 1)",
+      backgroundColor: "rgba(255, 165, 0, 0.6)", // Orange bars
+      borderColor: "rgba(255, 165, 0, 1)", // Orange border
       borderWidth: 1
     }]
   },
   options: {
+    responsive: true,
     scales: {
       y: {
         beginAtZero: true,
         max: dailyLimit, // Set maximum to daily limit
         ticks: {
           stepSize: 1
+        }
+      }
+    },
+    layout: {
+      padding: {
+        left: 10,
+        right: 10,
+        top: 10,
+        bottom: 10
+      }
+    },
+    plugins: {
+      legend: {
+        labels: {
+          color: 'rgba(255, 165, 0, 1)', // Legend text in orange
         }
       }
     }
