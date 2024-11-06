@@ -99,7 +99,7 @@ const myChart = new Chart(ctx, {
     plugins: {
       legend: {
         labels: {
-          color: 'rgba(255, 165, 0, 1)', // Legend text in orange
+          color: 'rgba(255,69,0)', // Legend text in orange
         }
       }
     }
