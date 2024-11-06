@@ -1,0 +1,72 @@
+/* General Styles */
+body {
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #E0F7FA;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+h1 {
+  color: #333;
+  font-size: 1.8rem;
+}
+
+button {
+  margin-top: 20px;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  background-color: #FF7043;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #E64A19;
+}
+
+.results {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.chart-container {
+  max-width: 90%;
+  width: 100%;
+  margin-top: 30px;
+  background-color: #BBDEFB;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+#myChart {
+  width: 100% !important;
+  height: auto !important;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+
+  .results {
+    font-size: 1rem;
+  }
+
+  .chart-container {
+    padding: 10px;
+  }
+}
