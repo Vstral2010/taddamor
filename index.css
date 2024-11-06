@@ -41,14 +41,14 @@ button:hover {
   max-width: 90%;
   width: 100%;
   margin-top: 30px;
-  background-color: #BBDEFB;
+  background-color: rgba(255, 165, 0, 0.1); /* Lighter orange background */
   padding: 20px;
   border-radius: 10px;
-}
-
-#myChart {
-  width: 100% !important;
-  height: auto !important;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  /* Removed the draggable styles */
+  position: relative; /* Keeps the chart in place */
+  top: auto;
+  left: auto;
 }
 
 /* Mobile Responsiveness */
