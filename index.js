@@ -68,7 +68,7 @@ clickButton.addEventListener("click", () => {
 const myChart = new Chart(ctx, {
   type: "bar",
   data: {
-    labels: ["الخميس", "الجمعة", "السبت", "الأحد", "الاثنين", "الثلاثاء", "الأربعاء"], // Days in Arabic from right to left
+    labels: ["الاثنين", "الثلاثاء", "الأربعاء", "الخميس", "الجمعة", "السبت", "الأحد"], // Days in Arabic from right to left
     datasets: [{
       label: "عدد النقرات حسب الأيام (هذا الأسبوع):",
       data: dailyClicks,
