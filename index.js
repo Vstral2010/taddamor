@@ -40,8 +40,8 @@ const resetDailyClicks = () => {
 
 // Update the chart with the latest data
 const updateChart = () => {
-  myChart.data.datasets[0].data = dailyClicks;
-  myChart.update();
+  myChart.data.datasets[0].data = dailyClicks; // Update the chart data
+  myChart.update(); // Re-render the chart with the new data
 };
 
 // Handle button click event
@@ -53,14 +53,14 @@ clickButton.addEventListener("click", () => {
 
   // Check if the daily limit has been reached
   if (dailyClicks[adjustedToday] < dailyLimit) {
-    clickCount++;
-    dailyClicks[adjustedToday]++;
-    clickCountDisplay.textContent = clickCount;
-    storeData(); // Store updated data
+    clickCount++; // Increase the total click count
+    dailyClicks[adjustedToday]++; // Increase the count for the clicked day
+    clickCountDisplay.textContent = clickCount; // Update the total clicks on the page
+    storeData(); // Save the updated data to localStorage
 
-    updateChart();
+    updateChart(); // Update the chart with the new data
   } else {
-    alert("لقد وصلت إلى الحد اليومي!");
+    alert("لقد وصلت إلى الحد اليومي!"); // Notify user when limit is reached
   }
 });
 
@@ -68,7 +68,7 @@ clickButton.addEventListener("click", () => {
 const myChart = new Chart(ctx, {
   type: "bar",
   data: {
-    labels: ["الخميس", "الجمعة", "السبت", "الأحد", "الاثنين", "الثلاثاء", "الأربعاء"],
+    labels: ["الخميس", "الجمعة", "السبت", "الأحد", "الاثنين", "الثلاثاء", "الأربعاء"], // Days in Arabic from right to left
     datasets: [{
       label: "عدد النقرات حسب الأيام (هذا الأسبوع):",
       data: dailyClicks,
@@ -108,3 +108,4 @@ const myChart = new Chart(ctx, {
 
 // Load data on page load
 loadStoredData();
+
